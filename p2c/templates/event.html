@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <td>
+        <th>events_name</th>
+        <th>event_organizer</th>
+        <th>organizer_contact</th>
+    </td>
+    {%for events in events%}
+    <tr>
+        <td>{{events.events_name}}</td>
+        <td>{{events.event_organizer}}</td>
+        <td>{{events.organizer_contact}}</td>
+    </tr>
+    {%endfor %}
+</table>
+</body>
+</html>
+
+#######################all codes 'p2c-21-085' ###############################
