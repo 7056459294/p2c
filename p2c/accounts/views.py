@@ -7,6 +7,9 @@ from django.contrib.auth import authenticate, login as dj_login,logout
 
 # Create your views here.
 
+def home(request):
+    return render(request, 'home.html')
+
 def profile(request):  #p2c-21-105
     if request.user.is_authenticated:
         fm=EditUser(instance=request.user)
@@ -14,11 +17,6 @@ def profile(request):  #p2c-21-105
     else:
         return HttpResponseRedirect('/login/')
 
-def signup(request):
-    return render(request, 'signup.html')
-
-def forgot_password(request):
-    return render(request, 'forgot_password.html')
 
 def register(request):                          #p2c-21-105
     if request.method == 'POST':
@@ -57,3 +55,6 @@ def login(request):                       #p2c-21-105
             messages.warning(request,'invalid credentials')
             return redirect('register')
     return render(request,'login.html')
+
+def forgot_password(request):
+    return render(request, 'forgot_password.html')
