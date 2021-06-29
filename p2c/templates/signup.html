@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/sign.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>Document</title>
-</head>
+{% extends  'base.html' %}
+{% block content %}
 <body>
     <section class="login-block">
         <div class="container-fluid">
             
                 <div class="col-sm-12">
                     <form class="md-float-material form-material" id="sign" action="#" method="POST">
+                        {% csrf_token %}
                         <div class="auth-box card">
                             <div class="card-block" id="signup">
                                 <div class="row">
@@ -27,7 +20,7 @@
                                 <div class="form-group form-primary"> <input type="password" class="form-control" name="password" placeholder="Password" value="" id="password"> </div>
                                 <div class="form-group form-primary"> <input type="password" class="form-control" name="confirm password" placeholder="Confirm password" value="" id="password_confirm"> </div>
                                 <div class="row">
-                                    <div class="col-md-12"> <input type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20" name="submit" value="Signup Now"> 
+                                    <div class="col-md-12"> <input type="submit" id="btn-bg" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20" name="submit" value="Signup Now"> 
                                     </div>
                                 </div>
                                 <div class="or-container">
@@ -36,10 +29,10 @@
                                     <div class="line-separator"></div>
                                 </div>
                                 
-                                    <div class="col-md-12" id="linkedin"> <a class="btn btn-lg btn-linkedin btn-block btn-outline" href="#"><img src="../static/img/linkedin.png"> Signup Using Linkedin</a> </div>
+                                    <div class="col-md-12" id="linkedin"> <a class="btn btn-lg btn-linkedin btn-block btn-outline" href="#"><img src="/../static/img/linkedin.png"> Signup Using Linkedin</a> </div>
                                 
                                 <br>
-                                <p class="text-inverse text-center">Already have an account? <a href="login.html" data-abc="true">Login</a></p>
+                                <p class="text-inverse text-center">Already have an account? <a href="/accounts/login/" data-abc="true">Login</a></p>
                             </div>
                         </div>
                     </form>
@@ -47,6 +40,7 @@
             
         </div>
     </section>
+{% endblock %}
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </html>
