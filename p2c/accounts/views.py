@@ -25,7 +25,7 @@ def forgot_password(request):
 def profile(request):  
     if request.user.is_authenticated:
         fm=EditUser(instance=request.user)
-        return render(request,'profile.html',{'name':request.user,'form':fm})
+        return render(request,'profile.html',{'name':request.user,'form':fm}),
     else:
         return HttpResponseRedirect('/login/')
 
